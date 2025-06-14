@@ -17,6 +17,7 @@
   <script async src="//waust.at/d.js"></script>
 
   <style>
+    /* CSS intact, sin cambios */
     * {
       margin: 0;
       padding: 0;
@@ -55,36 +56,43 @@
     }
 
     .logo img {
-      max-width: 180px;
-      margin-bottom: 25px;
+      width: 100%;
+      max-width: 240px;
+      margin-bottom: 30px;
       filter: drop-shadow(0 0 10px #fff);
     }
 
     .question-title {
-      font-size: 1.6rem;
-      margin: 20px 0;
+      font-size: 2rem;
+      margin: 25px 0;
       text-shadow: 1px 1px 3px #000;
+      line-height: 1.4;
     }
 
     .buttons-block {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      align-items: center;
+      gap: 20px;
       width: 100%;
-      max-width: 320px;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     .step-btn {
-      padding: 14px 20px;
+      width: 100%;
+      max-width: 100%;
+      padding: 18px 24px;
       background: linear-gradient(45deg, #ff0080, #7928ca);
       color: #fff;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.2rem;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
+      text-align: center;
     }
 
     .step-btn:hover {
@@ -98,12 +106,21 @@
     }
 
     @media (max-width: 480px) {
+      .logo img {
+        max-width: 200px;
+      }
+
       .question-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       .step-btn {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
+        padding: 16px 20px;
+      }
+
+      .buttons-block {
+        max-width: 90%;
       }
     }
   </style>
@@ -122,17 +139,17 @@
     <div class="step-block">
       <div class="step-item" id="step1">
         <div class="question-title">
-          Venim la tine noaptea, serviciu disponibil în tot orașul. Vrei să vezi catalogul meu?
+          Venim la tine acasă noaptea, serviciu disponibil în tot orașul. Vrei să vezi catalogul meu?
         </div>
         <div class="buttons-block">
-          <button class="step-btn" onclick="arataPasul2()">Da, vreau să văd</button>
-          <button class="step-btn" onclick="alert('Poate data viitoare!')">Nu acum</button>
+          <button class="step-btn" onclick="mostrarPaso2()">Da, vreau să văd</button>
+          <button class="step-btn" onclick="alert('Poate altă dată!')">Nu acum</button>
         </div>
       </div>
 
       <div class="step-item" id="step2" style="display: none;">
         <div class="question-title">
-          ATENȚIE! Accepți să respecți femeile pe care urmează să le vezi? Dacă recunoști pe cineva, nu spune nimic și nu răspândi zvonuri.
+          ATENȚIE! Accepți să respecți femeile pe care le vei vedea? Dacă recunoști pe cineva, păstrează tăcerea și nu răspândi zvonuri.
         </div>
         <div class="buttons-block">
           <a href="https://searchfordating.com/tds/ae?tdsId=s2190pos_r&tds_campaign=s2190pos&s1=ps&utm_source=int&utm_sub=opnfnl&affid=1b48fff7&subid={Zeus}&subid2={subid2}&clickid={clickid}" class="step-btn">
@@ -144,7 +161,7 @@
   </div>
 
   <script>
-    function arataPasul2() {
+    function mostrarPaso2() {
       document.getElementById("step1").style.display = "none";
       document.getElementById("step2").style.display = "block";
     }
